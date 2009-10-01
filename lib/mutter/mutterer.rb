@@ -37,7 +37,7 @@ module Mutter
         end if style.is_a? Symbol
       end
     end
-    
+
     def styles
       @defaults.merge @styles
     end
@@ -71,12 +71,12 @@ module Mutter
     # Output to @stream
     #
     def say msg, *styles
-      self.write (ENV['TERM'].include?('color') ? process(msg, *styles) : msg) + "\n"
+      self.write(ENV['TERM'].include?('color') ? process(msg, *styles) : msg) + "\n"
       return nil
     end
-    
+
     alias :print say
-    
+
     #
     #  Parse the message, but also apply a style on the whole thing
     #
